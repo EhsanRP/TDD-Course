@@ -2,26 +2,18 @@ package guru.springframework.moneyProblem;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
-@AllArgsConstructor
-public class Dollar {
+public class Dollar extends Money {
 
-    private int amount;
-
-    Dollar times(int multiplier) {
-        return new Dollar(amount * multiplier);
+    public Dollar(int amount) {
+        this.amount = amount;
     }
 
-    @Override
-    public boolean equals(Object object) {
-
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-
-        Dollar dollar = (Dollar) object;
-        return amount == dollar.amount;
+    Dollar times(int multiplier) {
+        return new Dollar(this.amount * multiplier);
     }
 }
