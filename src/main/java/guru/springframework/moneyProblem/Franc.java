@@ -7,12 +7,11 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class Dollar {
-
+public class Franc {
     private int amount;
 
-    Dollar times(int multiplier) {
-        return new Dollar(amount * multiplier);
+    Franc times(int multiplier) {
+        return new Franc(amount * multiplier);
     }
 
     @Override
@@ -21,7 +20,7 @@ public class Dollar {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
 
-        Dollar dollar = (Dollar) object;
-        return amount == dollar.amount;
+        Franc franc = (Franc) object;
+        return amount == franc.amount;
     }
 }
