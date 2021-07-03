@@ -11,8 +11,8 @@ public class Dollar {
 
     private int amount;
 
-    void times(int value){
-        amount *= value;
+    Dollar times(int multiplier){
+        return new Dollar(amount*multiplier);
     }
 
 }
