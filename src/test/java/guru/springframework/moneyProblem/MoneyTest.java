@@ -27,7 +27,7 @@ public class MoneyTest {
     }
 
     /*
-    Testing Franc0 Implementations of money Problem including Multiplication and Equality
+    Testing Franc Implementations of money Problem including Multiplication and Equality
     Note that: Franc constructor @Param is only money amount
      */
 
@@ -44,5 +44,15 @@ public class MoneyTest {
     void testEqualityFranc() {
         assertEquals(new Franc(5), new Franc(5));
         assertNotEquals(new Franc(5), new Franc(10));
+    }
+
+     /*
+    Testing equality methods to compare Francs and Dollars
+    Note that: Money and subclasses constructor @Param is only money amount
+     */
+
+    @Test
+    void testDollarFrancEquality() {
+        assertNotEquals(new Dollar(5), new Franc(5));
     }
 }
