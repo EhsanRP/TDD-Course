@@ -1,5 +1,7 @@
 package guru.springframework.moneyProblem;
 
+import java.util.Objects;
+
 public class Money {
 
     /*
@@ -21,11 +23,11 @@ public class Money {
      */
 
     public static Money dollar(int amount) {
-        return new Dollar(amount, "USD");
+        return new Money(amount, "USD");
     }
 
     public static Money franc(int amount) {
-        return new Franc(amount, "CHF");
+        return new Money(amount, "CHF");
     }
 
     /*
@@ -45,13 +47,16 @@ public class Money {
      */
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Money)) return false;
+        Money money = (Money) o;
+        return amount == money.amount && currency.equals(money.currency);
+    }
 
-        if (this == object) return true;
-        if (object == null) return false;
-
-        Money money = (Money) object;
-        return amount == money.amount && this.currency.equals(money.currency);
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, currency);
     }
 
     @Override
