@@ -1,6 +1,6 @@
 package guru.springframework.moneyProblem;
 
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -18,20 +18,30 @@ public abstract class Money {
         return new Franc(amount, "CHF");
     }
 
-    protected String currency(){
-        return currency;
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
     }
 
-    public abstract Money times(int multiplier);
+    protected String currency() {
+        return currency;
+    }
 
     @Override
     public boolean equals(Object object) {
 
         if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
+        if (object == null) return false;
 
         Money money = (Money) object;
-        return amount == money.amount;
+        return amount == money.amount && this.currency.equals(money.currency);
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency + '\'' +
+                '}';
     }
 
 }
