@@ -2,7 +2,7 @@ package guru.springframework.moneyProblem;
 
 import java.util.Objects;
 
-public class Money {
+public class Money implements Expression {
 
     /*
         This section belongs to class properties.
@@ -36,6 +36,10 @@ public class Money {
 
     public Money times(int multiplier) {
         return new Money(amount * multiplier, currency);
+    }
+
+    public Expression plus(Money addend){
+        return new Money(amount+ addend.amount,currency);
     }
 
     protected String currency() {
