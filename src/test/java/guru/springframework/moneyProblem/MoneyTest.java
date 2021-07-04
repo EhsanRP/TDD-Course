@@ -35,7 +35,7 @@ public class MoneyTest {
     }
 
     /*
-    Testing Currencies Francs and Dollars + Testing currency utilities
+    Testing Currencies Francs and Dollars
     Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
      */
 
@@ -45,6 +45,11 @@ public class MoneyTest {
         assertEquals("CHF", Money.franc(1).currency());
     }
 
+    /*
+    Testing Addition for currencies
+    Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
+     */
+
     @Test
     void testSimpleAddition() {
         var five = Money.dollar(5);
@@ -52,5 +57,29 @@ public class MoneyTest {
         var bank = new Bank();
         var reduced = bank.reduce(sum,"USD");
         assertEquals(Money.dollar(10),reduced);
+    }
+
+    @Test
+    void testPlusReturnsSum() {
+        Money five = Money.dollar(5);
+        Expression result = five.plus(five);
+        Sum sum  = (Sum) result;
+        assertEquals(five,sum.augmend);
+        assertEquals(five,sum.addmend);
+    }
+
+    @Test
+    void testReduceSum() {
+        Expression sum = new Sum(Money.dollar(3),Money.dollar(4));
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum,"USD");
+        assertEquals(Money.dollar(7),result);
+    }
+
+    @Test
+    void testReduceMoney() {
+        Bank bank = new Bank();
+        Money result = bank.reduce(Money.dollar(1),"USD");
+        assertEquals(Money.dollar(1),result);
     }
 }
