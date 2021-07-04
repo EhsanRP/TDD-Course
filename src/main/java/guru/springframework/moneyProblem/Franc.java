@@ -1,6 +1,5 @@
 package guru.springframework.moneyProblem;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,12 +7,12 @@ import lombok.Setter;
 @Getter
 public class Franc extends Money {
 
-    public Franc(int amount) {
-        this.amount = amount;
+    public Franc(int amount, String currency) {
+        super(amount, currency);
     }
 
     public Money times(int multiplier) {
-        return new Franc(amount * multiplier);
+        return Money.franc(amount * multiplier);
     }
 
 }

@@ -9,7 +9,7 @@ public class MoneyTest {
 
     /*
     Testing Dollar Implementations of money Problem including Multiplication and Equality
-    Note that: Dollar constructor @Param is only money amount
+    Note that: The only way to instantiate Dollar and Franc currencies is by using Money Factory methods.
      */
 
     @Test
@@ -27,7 +27,7 @@ public class MoneyTest {
 
     /*
     Testing Franc Implementations of money Problem including Multiplication and Equality
-    Note that: Franc constructor @Param is only money amount
+    Note that: The only way to instantiate Dollar and Franc currencies is by using Money Factory methods.
      */
 
     @Test
@@ -45,13 +45,18 @@ public class MoneyTest {
 
      /*
     Testing equality methods to compare Francs and Dollars
-    Note that: Money and subclasses constructor @Param is only money amount
+    Note that: The only way to instantiate Dollar and Franc currencies is by using Money Factory methods.
      */
 
     @Test
     void testDollarFrancEquality() {
         assertNotEquals(Money.dollar(5), Money.franc(5));
     }
+
+    /*
+    Testing Currencies Francs and Dollars
+    Note that: The only way to instantiate Dollar and Franc currencies is by using Money Factory methods.
+     */
 
     @Test
     void testCurrency() {
