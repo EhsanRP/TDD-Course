@@ -2,6 +2,11 @@ package guru.springframework.moneyProblem;
 
 public class Money {
 
+    /*
+        This section belongs to class properties.
+        I Made this comment section only and only because it might get complicated so this indicator shows where the properties section begin.
+    */
+
     protected int amount;
     protected String currency;
 
@@ -9,6 +14,11 @@ public class Money {
         this.amount = amount;
         this.currency = currency;
     }
+
+    /*
+        This section belongs to factory methods to instantiate currencies such as Franc and Dollar
+        @Param amount: indicates amount of the instance
+     */
 
     public static Money dollar(int amount) {
         return new Dollar(amount, "USD");
@@ -18,6 +28,10 @@ public class Money {
         return new Franc(amount, "CHF");
     }
 
+    /*
+        Currency Utils here
+     */
+
     public Money times(int multiplier) {
         return new Money(amount * multiplier, currency);
     }
@@ -25,6 +39,10 @@ public class Money {
     protected String currency() {
         return currency;
     }
+
+    /*
+        Class methods: Equals, HashCode and ToString
+     */
 
     @Override
     public boolean equals(Object object) {
