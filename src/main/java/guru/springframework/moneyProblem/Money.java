@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Money implements Expression {
 
-    /*
+    /**
         This section belongs to class properties.
         I Made this comment section only and only because it might get complicated so this indicator shows where the properties section begin.
-    */
+    **/
 
     protected int amount;
     protected String currency;
@@ -17,10 +17,10 @@ public class Money implements Expression {
         this.currency = currency;
     }
 
-    /*
+    /**
         This section belongs to factory methods to instantiate currencies such as Franc and Dollar
         @Param amount: indicates amount of the instance
-     */
+     **/
 
     public static Money dollar(int amount) {
         return new Money(amount, "USD");
@@ -30,9 +30,9 @@ public class Money implements Expression {
         return new Money(amount, "CHF");
     }
 
-    /*
+    /**
         Currency Utils here
-     */
+     **/
 
     public Expression times(int multiplier) {
         return new Money(amount * multiplier, currency);
@@ -53,9 +53,9 @@ public class Money implements Expression {
         return new Money(amount / rate, toCurrency);
     }
 
-    /*
+    /**
         Class methods: Equals, HashCode and ToString
-     */
+     **/
 
     @Override
     public boolean equals(Object o) {

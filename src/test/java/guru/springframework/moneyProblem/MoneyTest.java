@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class MoneyTest {
 
-    /*
+    /**
     Testing Implementations of money Problem including Multiplication and Equality
     Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
-     */
+     **/
 
     @Test
     void testMultiplication() {
@@ -34,10 +34,10 @@ public class MoneyTest {
         assertNotEquals(Money.dollar(5), Money.franc(5));
     }
 
-    /*
+    /**
     Testing Currencies Francs and Dollars
     Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
-     */
+     **/
 
     @Test
     void testCurrency() {
@@ -45,10 +45,10 @@ public class MoneyTest {
         assertEquals("CHF", Money.franc(1).currency());
     }
 
-    /*
-    Testing Addition for same currencies
+    /**
+     Testing Addition for same currencies
     Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
-     */
+     **/
 
     @Test
     void testSimpleAddition() {
@@ -83,10 +83,10 @@ public class MoneyTest {
         assertEquals(Money.dollar(1), result);
     }
 
-    /*
+    /**
     Testing exchanging different currencies
     Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
-     */
+     **/
 
     @Test
     void testReduceMoneyDifferentCurrency() {
@@ -102,10 +102,10 @@ public class MoneyTest {
         assertEquals(1, new Bank().rate("CHF", "CHF"));
     }
 
-    /*
+    /**
     Testing Addition for different currencies
     Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
-     */
+     **/
 
     @Test
     void testMixedAddition() {
