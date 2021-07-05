@@ -46,7 +46,7 @@ public class MoneyTest {
     }
 
     /*
-    Testing Addition for currencies
+    Testing Addition for same currencies
     Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
      */
 
@@ -100,5 +100,22 @@ public class MoneyTest {
     void testIdentityRate() {
         assertEquals(1,new Bank().rate("USD","USD"));
         assertEquals(1,new Bank().rate("CHF","CHF"));
+    }
+
+    /*
+    Testing Addition for different currencies
+    Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
+     */
+
+    @Test
+    void testMixedAddition() {
+        Expression fiveUSD = Money.dollar(5);
+        Expression tenCHF = Money.franc(10);
+
+        Bank bank = new Bank();
+        bank.addRate("CHF","USD",2);;
+        Expression result = bank.reduce(fiveUSD.plus(tenCHF),"USD");
+
+        assertEquals(Money.dollar(10),result);
     }
 }
