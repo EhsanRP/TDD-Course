@@ -83,6 +83,11 @@ public class MoneyTest {
         assertEquals(Money.dollar(1),result);
     }
 
+    /*
+    Testing exchanging different currencies
+    Note that: The only way to have Dollar and Franc currencies is by using Money Factory methods.
+     */
+
     @Test
     void testReduceMoneyDifferentCurrency() {
         Bank bank = new Bank();

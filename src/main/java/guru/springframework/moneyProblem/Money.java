@@ -38,7 +38,7 @@ public class Money implements Expression {
         return new Money(amount * multiplier, currency);
     }
 
-    public Expression plus(Money addend){
+    public Expression plus(Money addend) {
         return new Sum(this, addend);
     }
 
@@ -47,8 +47,9 @@ public class Money implements Expression {
     }
 
     @Override
-    public Money reduce(String toCurrency){
-        return this;
+    public Money reduce(Bank bank, String toCurrency) {
+        var rate = bank.rate(this.currency, toCurrency);
+        return new Money(amount / rate, toCurrency);
     }
 
     /*
