@@ -8,12 +8,22 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class Sum implements Expression {
-    Money augmend;
-    Money addmend;
+    Expression augmend;
+    Expression addmend;
 
     @Override
     public Money reduce(Bank bank, String toCurrency) {
-        var amount = augmend.amount + addmend.amount;
+
+        var from = augmend.reduce(bank, toCurrency).amount;
+        var to = addmend.reduce(bank,toCurrency).amount;
+
+        var amount = from + to ;
+
         return new Money(amount, toCurrency);
+    }
+
+    @Override
+    public Expression plus(Expression addend) {
+        return null;
     }
 }
