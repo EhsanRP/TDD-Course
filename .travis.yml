@@ -1,12 +1,2 @@
 language: java
-
-jdk:
-  - oraclejdk11
-
-cache:
-  directories:
-    - $HOME/.m2
-
-script:
-  - java --version
-  - ./mvnw test
+jdk: openjdk11
