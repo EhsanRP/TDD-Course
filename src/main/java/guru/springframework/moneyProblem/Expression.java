@@ -3,7 +3,7 @@ package guru.springframework.moneyProblem;
 public interface Expression {
     Money reduce(Bank bank, String toCurrency);
 
-    public Expression plus(Expression addend);
+    Expression plus(Expression addend);
 
-    public Expression times(int multiplier);
+    Expression times(int multiplier);
 }

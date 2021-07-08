@@ -9,8 +9,8 @@ public class Money implements Expression {
         I Made this comment section only and only because it might get complicated so this indicator shows where the properties section begin.
     **/
 
-    protected int amount;
-    protected String currency;
+    protected final int amount;
+    protected final String currency;
 
     public Money(int amount, String currency) {
         this.amount = amount;
