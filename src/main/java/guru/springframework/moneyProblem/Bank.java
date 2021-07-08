@@ -16,9 +16,8 @@ public class Bank {
             return 1;
 
         var pair = new Pair(from,to);
-        var rate = rateMap.get(pair);
 
-        return rate;
+        return rateMap.get(pair);
     }
 
     public void addRate(String from, String to, int rate) {
