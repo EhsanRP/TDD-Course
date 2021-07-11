@@ -27,9 +27,17 @@ class IndexControllerTest {
                 "Wrong View Returned");
     }
 
-    @DisplayName("Test exception")
+    @DisplayName("Test exception message")
     @Test
     void oupsHandler() {
         assertTrue("notimplemented".equals(indexController.oupsHandler()), () -> "This is some expensive messages");
+    }
+
+    @DisplayName("Test exception")
+    @Test
+    void throwableException() {
+        assertThrows(ValueNotFoundException.class, () -> {
+            indexController.throwableException();
+        });
     }
 }
