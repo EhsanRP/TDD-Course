@@ -7,7 +7,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.*;
+import org.junit.platform.commons.util.ReflectionUtils;
 
+import java.lang.reflect.Method;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -72,5 +75,47 @@ class IndexControllerTest {
     @Test
     void testAssuptionTrue() {
         assumeTrue("GURU".equalsIgnoreCase("GURU"));
+    }
+
+    @EnabledOnOs(OS.MAC)
+    @Test
+    void testOnMacOs() {
+        System.out.println(System.getProperty("os.name"));
+    }
+
+    @EnabledOnOs(OS.WINDOWS)
+    @Test
+    void testOnWindows() {
+        System.out.println(System.getProperty("os.name"));
+    }
+
+    @EnabledOnOs(OS.LINUX)
+    @Test
+    void testOnLinux() {
+        System.out.println(System.getProperty("os.name"));
+    }
+
+    @EnabledOnJre(JRE.JAVA_8)
+    @Test
+    void testOnLJava8() {
+
+    }
+
+    @EnabledOnJre(JRE.JAVA_11)
+    @Test
+    void testOnLJava11() {
+
+    }
+
+    @EnabledIfEnvironmentVariable(named = "NUMBER_OF_PROCESSORS",matches = "8")
+    @Test
+    void testOnProcessors8() {
+
+    }
+
+    @EnabledIfEnvironmentVariable(named = "NUMBER_OF_PROCESSORS",matches = "6")
+    @Test
+    void testOnProcessors6() {
+
     }
 }
