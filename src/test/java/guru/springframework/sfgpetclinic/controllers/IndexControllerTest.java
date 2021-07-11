@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /**
  * @author Ehsan Rostami Pour
@@ -61,6 +62,15 @@ class IndexControllerTest {
         assertTimeoutPreemptively(Duration.ofMillis(100),() -> Thread.sleep(5000));
 
         System.out.println("i got here 2");
+    }
 
+    @Test
+    void testAssuption() {
+        assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
+    }
+
+    @Test
+    void testAssuptionTrue() {
+        assumeTrue("GURU".equalsIgnoreCase("GURU"));
     }
 }
