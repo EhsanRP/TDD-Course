@@ -31,17 +31,7 @@ class VetControllerTest {
         vetController = new VetController(vetService);
 
         var vet1 = new Vet(1l, "ehsan", "rostami", new HashSet<>());
-        var vet2 = new Vet(1l, "ehsan", "rostami", new HashSet<>());
-        var vet3 = new Vet(1l, "ehsan", "rostami", new HashSet<>());
-        var vet4 = new Vet(1l, "ehsan", "rostami", new HashSet<>());
-        var vet5 = new Vet(1l, "ehsan", "rostami", new HashSet<>());
-
         vetService.save(vet1);
-        vetService.save(vet2);
-        vetService.save(vet3);
-        vetService.save(vet4);
-        vetService.save(vet5);
-
     }
 
     @Test
