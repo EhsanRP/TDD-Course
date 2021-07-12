@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.model;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -10,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @version 1.0
  * @date 7/11/2021 5:14 PM
  */
+
+@Tag("Model")
 class OwnerTest {
 
     @Test

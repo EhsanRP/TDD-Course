@@ -3,10 +3,7 @@ package guru.springframework.sfgpetclinic.controllers;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.springdatajpa.OwnerSDJpaService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 import org.junit.platform.commons.util.ReflectionUtils;
 
@@ -21,6 +18,8 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
  * @version 1.0
  * @date 7/11/2021 4:53 PM
  */
+
+@Tag("Controllers")
 class IndexControllerTest {
 
     IndexController indexController;
