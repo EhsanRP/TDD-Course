@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import guru.springframework.sfgpetclinic.ControllerTests;
 import guru.springframework.sfgpetclinic.fauxspring.Model;
 import guru.springframework.sfgpetclinic.fauxspring.ModelImpl;
 import guru.springframework.sfgpetclinic.model.Vet;
@@ -10,14 +11,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Ehsan Rostami Pour
  * @version 1.0
  * @date 7/11/2021 11:16 PM
  */
-class VetControllerTest {
+
+class VetControllerTest implements ControllerTests {
 
     VetController vetController;
     VetService vetService;
