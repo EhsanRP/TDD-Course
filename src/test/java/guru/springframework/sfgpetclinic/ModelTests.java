@@ -1,8 +1,6 @@
 package guru.springframework.sfgpetclinic;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 
 /**
  * @author Ehsan Rostami Pour
@@ -18,4 +16,5 @@ public interface ModelTests {
     default void beforeAll(){
         System.out.println("Lets Test Models");
     }
+
 }
